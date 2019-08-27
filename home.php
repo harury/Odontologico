@@ -12,6 +12,7 @@
 		<?php include 'header.php'?>
 
 		<!-- SESSÃO DO SISTEMA WEB -->
+		
 			<!--Área de verificação de Consultas-->
 		<div class = "row">
 			<div class = "col"></div>
