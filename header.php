@@ -1,6 +1,6 @@
 
 	<header class="bg-white border border-dark pb-2 mb-4">
-		<div id="menu"class="d-flex justify-content-around">
+		<div id="menu"class="d-flex justify-content-between">
 			<div class="d-inline-flex bd-highlight">
 				<div>
 					<img src="img/logo.png">
@@ -18,7 +18,7 @@
 					</div>
 				</div>
 
-			<div class="d-inline-flex bd-highlight mt-3">
+			<div class="d-inline-flex bd-highlight mt-3 mr-2">
 				<div>
 					<p>XXXXXXXXXXXXXX,</p>
 					<p>Developer</p>
@@ -34,52 +34,52 @@
 
 			<div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
 				<ul class="d-flex flex-column nav-item">
-					<div class="d-flex justify-content-center"><i id = "home" class="fa fa-home fa-3x" aria-hidden="true"></i></div>
+					<a href="home.php"><div class="d-flex justify-content-center"><i id = "home" class="fa fa-home fa-3x" aria-hidden="true"></i></div>
 					<div class="d-flex justify-content-center mb-2">
 						<b>Home</b>
-					</div>
+					</div></a>
 				</ul>
 
 				<ul class="d-flex flex-column nav-item">
-					<div class="d-flex justify-content-center"> <i id = "contatos" class="fa fa-address-book-o fa-3x" aria-hidden="true"></i></div>
+					<a class = "text-black" href="cadastro.php"><div class="d-flex justify-content-center"> <i id = "cadastro" class="fa fa-address-book-o fa-3x" aria-hidden="true"></i></div>
 					<div class="d-flex justify-content-center mb-2">
-						<b>Contatos</b>
-					</div>
+						<b>Cadastro</b>
+					</div></a>
 				</ul>
 
 				<ul class="d-flex flex-column nav-item">
-					<div class="d-flex justify-content-center"><i id = "agenda"class="fa fa-calendar-check-o fa-3x" aria-hidden="true"></i></div>
+					<a href=""><div class="d-flex justify-content-center"><i id = "agenda"class="fa fa-calendar-check-o fa-3x" aria-hidden="true"></i></div>
 					<div class="d-flex justify-content-center mb-2">
 						<b>Agenda</b>
-					</div>
+					</div></a>
 				</ul>
 
 				<ul class="d-flex flex-column nav-item">
-					<div class="d-flex justify-content-center"> <i id = "ficha"class="fa fa-file-text-o fa-3x" aria-hidden="true"></i></div>
+					<a href=""><div class="d-flex justify-content-center"> <i id = "ficha"class="fa fa-file-text-o fa-3x" aria-hidden="true"></i></div>
 					<div class="d-flex justify-content-center mb-2">
 						<b>Ficha</b>
-					</div>
+					</div></a>
 				</ul>
 
 				<ul class="d-flex flex-column nav-item">
-					<div class="d-flex justify-content-center"> <i id = "estoque"class="fa fa-stack-overflow fa-3x" aria-hidden="true"></i></div>
+					<a href=""><div class="d-flex justify-content-center"> <i id = "estoque"class="fa fa-stack-overflow fa-3x" aria-hidden="true"></i></div>
 					<div class="d-flex justify-content-center mb-2">
 						<b>Estoque</b>
-					</div>
+					</div></a>
 				</ul>
 
 				<ul class="d-flex flex-column nav-item">
-					<div class="d-flex justify-content-center"> <i id = "relatorio" class="fa fa-list-ul fa-3x" aria-hidden="true"></i></div>
+					<a href=""><div class="d-flex justify-content-center"> <i id = "relatorio" class="fa fa-list-ul fa-3x" aria-hidden="true"></i></div>
 					<div class="d-flex justify-content-center mb-2">
 						<b>Relatório</b>
-					</div>
+					</div></a>
 				</ul>
 
 				<ul class="d-flex flex-column nav-item">
-					<div class="d-flex justify-content-center"> <i id = "adm" class="fa fa-gears fa-3x" aria-hidden="true"></i></div>
+					<a href=""><div class="d-flex justify-content-center"> <i id = "adm" class="fa fa-gears fa-3x" aria-hidden="true"></i></div>
 					<div class="d-flex justify-content-center">
 						<b>Administração</b>
-					</div>
+					</div></a>
 				</ul>
 			</div>
 		</nav>

@@ -13,7 +13,7 @@
 
 		<!-- SESSÃO DO SISTEMA WEB -->
 		
-			<!--Área de verificação de Consultas-->
+		<!--Área de verificação de Consultas-->
 		<div class = "row">
 			<div class = "col"></div>
 		    <div class = "col-lg-5 mt-4">
@@ -117,6 +117,7 @@
 					      	<th>Horário</th>
 					      	<th>Nome</th>
 					    	<th>Situação</th>
+					    	<th>Ação</th>
 				  		</tr>
 					</thead>
 					<tbody id = "tbodyProxi">
@@ -126,6 +127,7 @@
 				      		<td>
 				      			<i class="fa fa-circle text-success" aria-hidden="true"></i>
 				      		</td>
+				      		<td>A</td>
 				    	</tr>
 					    <tr>
 					      
@@ -134,6 +136,7 @@
 					    	<td>
 					    			<i class = "fa fa-circle text-primary" aria-hidden="true"></i>
 					    	</td>
+					    	<td>A</td>
 					    </tr>
 					    <tr>
 				      		<td>10:00</td>
@@ -141,6 +144,7 @@
 				      		<td>
 				      			<i class = "fa fa-circle text-danger" aria-hidden="true"></i>
 				      		</td>
+				      		<td>A</td>
 				    	</tr>
 				    	 <tr>
 				      		<td>10:00</td>
@@ -148,6 +152,7 @@
 				      		<td>
 				      			<i class = "fa fa-circle text-danger" aria-hidden="true"></i>
 				      		</td>
+				      		<td>A</td>
 				    	</tr>
 				    	<tr>
 				      		<td>8:00</td>
@@ -155,6 +160,7 @@
 				      		<td>
 				      			<i class="fa fa-circle text-success" aria-hidden="true"></i>
 				      		</td>
+				      		<td>A</td>
 				    	</tr>
 				    	<tr>
 					      
@@ -163,6 +169,7 @@
 					    	<td>
 					    			<i class = "fa fa-circle text-primary" aria-hidden="true"></i>
 					    	</td>
+					    	<td>A</td>
 					    </tr>
 				 	</tbody>
 				</table>
