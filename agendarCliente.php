@@ -19,5 +19,9 @@
 
 	$sql = "INSERT INTO cliente VALUES('$cpf', '$nome', '$datadeNascimento', '$telefone', '$celular', '$email', '$cep', $numero, '$complemento', '$bairro', '$cidade', '$uf')"; 
 
-	$inserir = mysqli_query($con, $sql);
+	// $inserir = mysqli_query($con, $sql);
+
+	$msg = (mysqli_query($con, $sql)) ? "Gravado com sucesso" : "Erro ao gravar";
+
+	header("location:msg.php?msg=".$msg);
 ?>
