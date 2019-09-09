@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Odonto - Home</title>
+		<title>Odonto - Inicio</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -58,11 +58,11 @@
 							</div>
 						</div>
 
-						<div class = "col-md-7 ml-2">
+						<div class = "col-md-7 ml-2 w-50">
 							<span  class = "d-inline-flex">
 								<i class="fa fa-calendar mr-2" aria-hidden="true"></i>
 							</span>
-							<span class = "d-inline-flex">
+							<span class = "d-inline-flex w-50">
 								<input class = "form-control" type="date" name="data" style = "width: 85%">
 							</span>
 							<p class="text-center mt-2">
@@ -124,7 +124,7 @@
 					<tbody id = "tbodyProxi">
 				  		<tr>
 				      		<td>8:00</td>
-				      		<td>Leandro Cerqueira</td>
+				      		<td>Leandro Cerqueira pereira da silva</td>
 				      		<td>
 				      			<i class="fa fa-circle text-success" aria-hidden="true"></i>
 				      		</td>
@@ -175,10 +175,10 @@
 				 	</tbody>
 				</table>
 				<span>
-					<input class = "text-center" type = "text" placeholder = "N Pacientes" disabled></input>
+					<input class = "text-center" type = "text" value = "N Pacientes" disabled>
 				</span>
 				<span>
-					<input class = "btn btn-primary float-right" type = "submit" value = "Visualizar Agenda"></input>
+					<a href= "#"><input class = "btn btn-primary float-right" type = "submit" value = "Visualizar Agenda"></a>
 				</span>
 			</div>
 			<div class = "col"></div>
@@ -199,31 +199,31 @@
 				  	<tbody id = "tbodyAni">
 				    	<tr>
 				      		<td>Leandro Cerqueira</td>
-				      		<td>N Anos</td>
+				      		<td>16-10</td>
 				    	</tr>
 				    	<tr>
 				      		<td>Matheus Ribeiro</td>
-				    		<td>N Anos</td>
+				    		<td>15-08</td>
 				    	</tr>
 				    	<tr>
 				      		<td>Marcus Vinicius</td>
-				    		<td>N Anos</td>
+				    		<td>22-09</td>
 				    	</tr>
 				    	<tr>
 				      		<td>Paulo Victor</td>
-				    		<td>N Anos</td>
+				    		<td>01-02</td>
 				    	</tr>
 				    	<tr>
 				      		<td>XXX.XXX</td>
-				    		<td>N Anos</td>
+				    		<td>02-08</td>
 				    	</tr>
 				    	<tr>
 				      		<td>Leandro Cerqueira</td>
-				      		<td>N Anos</td>
+				      		<td>05-10</td>
 				    	</tr>
 				    	<tr>
 				      		<td>Marcus Vinicius</td>
-				    		<td>N Anos</td>
+				    		<td>06-09</td>
 				    	</tr>
 				 	</tbody>
 				</table>

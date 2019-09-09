@@ -20,8 +20,9 @@
 
 			<div class="d-inline-flex bd-highlight mt-3 mr-2">
 				<div>
-					<p>XXXXXXXXXXXXXX,</p>
-					<p>Developer</p>
+					<h5>Seja Bem-vindo (a),</h5>
+					<h5>xxxx</h5>
+
 					<a href="login.php"><button type="button" class="btn btn-dark float-right">Sair</button></a>
 				</div>
 			</div>
@@ -33,10 +34,11 @@
 			</button>
 
 			<div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
+
 				<ul class="d-flex flex-column nav-item">
-					<a href="home.php"><div class="d-flex justify-content-center"><i id = "home" class="fa fa-home fa-3x" aria-hidden="true"></i></div>
+					<a class = "text-black" href="home.php"><div class="d-flex justify-content-center"> <i id = "home" class="fa fa-home fa-3x" aria-hidden="true"></i></div>
 					<div class="d-flex justify-content-center text-dark">
-						<b>Home</b>
+						<b>Início</b>
 					</div></a>
 				</ul>
 
@@ -55,14 +57,14 @@
 				</ul>
 
 				<ul class="d-flex flex-column nav-item">
-					<a href=""><div class="d-flex justify-content-center"> <i id = "ficha"class="fa fa-file-text-o fa-3x" aria-hidden="true"></i></div>
+					<a href="ficha.php"><div class="d-flex justify-content-center"> <i id = "ficha"class="fa fa-file-text-o fa-3x" aria-hidden="true"></i></div>
 					<div class="d-flex justify-content-center text-dark">
 						<b>Ficha</b>
 					</div></a>
 				</ul>
 
 				<ul class="d-flex flex-column nav-item">
-					<a href=""><div class="d-flex justify-content-center"> <i id = "estoque"class="fa fa-stack-overflow fa-3x" aria-hidden="true"></i></div>
+					<a href="estoque.php ?>"><div class="d-flex justify-content-center"><i id = "estoque"class="fa fa-stack-overflow fa-3x" aria-hidden="true"></i></div>
 					<div class="d-flex justify-content-center text-dark">
 						<b>Estoque</b>
 					</div></a>

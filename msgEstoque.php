@@ -21,7 +21,7 @@
                     <?php echo $msg;?>
                 </div>
         <?php };?>
-        <a href="cadastro.php">Voltar</a>
+        <a href="estoque.php">Voltar</a>
     </div>
 </body>
 </html>
