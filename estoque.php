@@ -5,7 +5,6 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="styleHome.css">
 		<link rel="stylesheet" type="text/css" href="styleHeader.css">
         <script>
             function excluir(id){
@@ -125,9 +124,9 @@
                                     <td><?php echo $dtVencimento?></td>
                                     <td><?php echo $complemento?></td>
                                     <td>
-                                        <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarEstoque.php?id=<?php echo $idEstoque?>" role="button"><i class="far fa-edit"></i></a>
+                                        <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarEstoque.php?id=<?php echo $idEstoque?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 
-                                        <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick="excluir(<?php echo $array['id_estoque']; ?>)" role="button"><i class="far fa-edit"></i></a>
+                                        <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick="excluir(<?php echo $array['id_estoque']; ?>)" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>

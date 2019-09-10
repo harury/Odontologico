@@ -15,7 +15,6 @@
 	$complemento = $_POST['complemento'];
 	$bairro = $_POST['bairro'];
 	$nascimento = $_POST['nascimento'];
-	$inicio_tratamento = $_POST['inicio_tratamento'];
 	$cidade = $_POST['cidade'];
 	$uf = $_POST['uf'];
 	$situacaoficha = $_POST['situacaoficha'];
@@ -32,8 +31,8 @@
 		
 	
 
+    $sql = "INSERT INTO pessoa VALUES(null,'{$cpf}','{$rg}','{$nome}','{$orcamento}' , '{$telefone}', '{$celular}', '{$email}', '{$cep}', '{$endereco}', '{$complemento}', '{$bairro}', '{$nascimento}', '{$cidade}', '{$uf}' , '{$situacaoficha}', '{$doencabase}' ,  '{$alergia}', '{$medicamentos}' , '{$cirurgia}' ,  '{$internacoes}' , '{$pa}' , '{$queixaprinc}')"; 
 
-    $sql = "INSERT INTO pessoa VALUES(null,'{$cpf}','{$rg}','{$nome}','{$orcamento}' , '{$telefone}', '{$celular}', '{$email}', '{$cep}', '{$endereco}', '{$complemento}', '{$bairro}', '{$nascimento}' , '{$inicio_tratamento}' , '{$cidade}', '{$uf}' , '{$situacaoficha}', '{$doencabase}' ,  '{$alergia}', '{$medicamentos}' , '{$cirurgia}' ,  '{$internacoes}' , '{$pa}' , '{$queixaprinc}')"; 
 
 	// $inserir = mysqli_query($con, $sql);
 

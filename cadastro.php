@@ -47,7 +47,7 @@
                 <input type="button" class ="btn btn-dark ml-2" onclick="window.print();" value="Imprimir">
                 <!--Modal  Tela de Cadastro-->
                 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-dialog modal-md" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h3 class="modal-title text-primary ml-5" id="modalTitle">Formulário de Cadastramento</h3>
@@ -56,23 +56,24 @@
                                 </button>
                             </div>
 
-                            <div class="modal-body">
+                            <div class="modal-body justify-content-around">
                                 <h5>Dados Pessoais:</h5>
                                 <form class = "form-group mt-2" action="cadastraPessoa.php" method="post">
-                                    <div class="form-group">
+                                    <div class="form-group w-100">
                                         <label for="cpf">CPF:</label>
                                         <input type="text" class="form-control" id="cpf" placeholder="" name = "cpf">
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group w-100">
                                         <label for="rg">RG:</label>
                                         <input type="text" class="form-control" id="rg" placeholder="" name = "rg">
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group w-100">
                                         <label for="nome">Nome:</label>
                                         <input type="text" class="form-control" id="nome" placeholder="" name = "nome">
                                     </div>
+                    
 
                                     <div class="form-group">
                                         <label for="orcamento">Orçamento:</label>
@@ -252,8 +253,8 @@
                                 <td><?php echo $datadeNascimento?></td>
 
                                 <td>
-                                    <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarCadastro.php?id=<?php echo $idPessoa?>" role="button"><i class="far fa-edit"></i></a> 
-                                    <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick = "excluir(<?php echo $array['id_pessoa']?>)" role="button"> <i class="far fa-trash-alt"></i></a>
+                                    <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarCadastro.php?id=<?php echo $idPessoa?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
+                                    <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick = "excluir(<?php echo $array['id_pessoa']?>)" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                 </td>
                              </tr>
 
