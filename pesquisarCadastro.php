@@ -18,18 +18,36 @@
 		<?php include 'header.php'?>
 
 		<h1 class = "text-center mb-4">Cadastro de Pacientes</h1>
+			<!--Botão que ativa o Modal-->
 			
         <div class = "pl-5 pr-5">
             <span class = "d-flex d-inline-flex mb-2">
                 <form class="form-inline">
                     <input class="form-control mr-2 ml-1" type="search" name = "nome">
-                    <button class="btn btn-primary btn-md mr-3" type="submit">Pesquisar</button>
+                    <button class="btn btn-success btn-md mr-3" type="submit">Pesquisar</button>
                 </form>
+                <?php
+                    if(isset($_GET["nome"])){
+                        $nome = $_GET["nome"];
+                        
+                        include_once 'conexao.php';
+                        
+                        $sql = "SELECT * FROM pessoa WHERE nome
+                        LIKE '%{$nome}%'";
+                        
+                        $result = mysqli_query($con, $sql); 
+                        
+                        $totalRegistros = mysqli_num_rows($result);
+
+                        if($totalRegistros > 0){
+                ?>
+                        
+                
                 <button type="button" class="btn btn-primary btn-md ml-2" data-toggle="modal" data-target="#modal1">Cadastrar Paciente</button>
 
                 <input type="button" class ="btn btn-dark ml-2" onclick="window.print();" value="Imprimir">
-
-                 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+                <!--Modal  Tela de Cadastro-->
+                <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
                     <div class="modal-dialog modal-md" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -76,7 +94,7 @@
                                     <div class="form-group">
                                         <label for="email">Email:</label>
                                         <input type="email" class="form-control" id="email" placeholder="" name = "email">
-                                    </div>                              
+                                    </div>								
 
 
                                     <div class="form-group">
@@ -87,7 +105,7 @@
                                     <div class="form-group">
                                         <label for="endereco">Endereço:</label>
                                         <input type="endereco" class="form-control" id="endereco" placeholder="" name = "endereco">
-                                    </div>  
+                                    </div>	
 
                                     <div class="form-group">
                                         <label for="complemento">Complemento:</label>
@@ -103,7 +121,7 @@
                                     <div class="form-group">
                                         <label for="nascimento">Data de Nascimento:</label>
                                         <input type="date" class="form-control" id="nascimento" placeholder="" name = "nascimento">
-                                    </div>  
+                                    </div>	
                                     <div class="form-group">
                                         <label for="cidade">Cidade:</label>
                                         <input type="text" class="form-control" id="cidade" placeholder="" name = "cidade">
@@ -121,7 +139,7 @@
 
                                     <div class = "mb-2">
                                         <h5>-----------------------Anamnese---------------------</h5>
-                                    </div>  
+                                    </div>	
 
                                     <div class="form-group">
                                         <label for="data">Doenças de Base:</label>
@@ -131,7 +149,7 @@
                                     <div class="form-group">
                                         <label for="alergia">Alergias:</label>
                                         <input type="text" class="form-control" id="alergia" placeholder="" name = "alergia">
-                                    </div>  
+                                    </div>	
 
                                     <div class="form-group">
                                         <label for="medicamentos">Medicamentos:</label>
@@ -156,7 +174,7 @@
                                     <div class="form-group">
                                         <label for="queixaprinc">Queixas Principais:</label>
                                         <input type="text" class="form-control" id="queixaprinc" placeholder="" name = "queixaprinc">
-                                    </div>                      
+                                    </div>						
 
 
                                     <input type="submit" class="btn btn-primary float-right" value = "Cadastrar">
@@ -167,22 +185,6 @@
                         </div>
                     </div>
                 </div>
-                <?php
-                    if(isset($_GET["nome"])){
-                        $nome = $_GET["nome"];
-                        
-                        include_once 'conexao.php';
-                        
-                        $sql = "SELECT * FROM pessoa WHERE nome
-                        LIKE '{$nome}%'";
-                        
-                        $result = mysqli_query($con, $sql); 
-                        
-                        $totalRegistros = mysqli_num_rows($result);
-
-                        if($totalRegistros > 0){
-                ?>
-                <!--Modal  Tela de Cadastro-->
             </span>
             <div class = "overflow-auto ml-1 mr-1" style = "max-height: 550px">
                 <table class="table border table-striped">
@@ -203,26 +205,24 @@
                     <tbody id = "tbodyCadastro">
                     <?php
                             while($array = mysqli_fetch_array($result)){
-
-                                $idPessoa = $array['id_pessoa'];
-                                $nascimento = $array['nascimento'];
-                                $dtNasci = explode('-', $nascimento);
-                                $datadeNascimento = $dtNasci[2] . "-" . $dtNasci[1]. "-" . $dtNasci[0];
+                            $idPessoa = $array['id_pessoa'];
+                            $nascimento = $array['nascimento'];
+                            $dtNasci = explode('-', $nascimento);
+                            $datadeNascimento = $dtNasci[2] . "-" . $dtNasci[1]. "-" . $dtNasci[0];
                         ?>
                             <tr>
                                 <td><?php echo $array['cpf'];?></td>
                                 <td><?php echo $array['rg'];?></td>
                                 <td><?php echo $array['nome'];?></td>
-                                <td><?php echo $array['orcamento'];?></td>
                                 <td><?php echo $array['telefone'];?></td>
                                 <td><?php echo $array['celular'];?></td>
                                 <td><?php echo $array['situacaoficha'];?></td>
-                                <td><?php echo $datadeNascimento?></td> 
-                                <td>
-                                    <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarCadastro.php?id=<?php echo $idPessoa?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
-                                    <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick = "excluir(<?php echo $array['id_pessoa']?>)" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                </td>
-                            </tr>
+                                <td><?php echo $datadeNascimento?></td>
+                            </tr>  
+                            <td>
+                                <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarCadastro.php?id=<?php echo $idPessoa?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
+                                <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick = "excluir(<?php echo $array['id_pessoa']?>)" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </td>
                             <?php
                             }
                         } else {

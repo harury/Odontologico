@@ -33,7 +33,7 @@
                 <button id = "buttonEdicao" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal1">Editar Dados do Paciente</button>
             </div>
             <div class = "text-center">
-                <a href="estoque.php" style = "font-size:20px;">Voltar</a>
+                <a href="cadastro.php" style = "font-size:20px;">Voltar</a>
             </div>
         </div>
 
