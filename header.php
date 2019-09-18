@@ -71,7 +71,7 @@
 				</ul>
 
 				<ul class="d-flex flex-column nav-item">
-					<a href=""><div class="d-flex justify-content-center"> <i id = "relatorio" class="fa fa-list-ul fa-3x" aria-hidden="true"></i></div>
+					<a href="relatorio.php"><div class="d-flex justify-content-center"> <i id = "relatorio" class="fa fa-list-ul fa-3x" aria-hidden="true"></i></div>
 					<div class="d-flex justify-content-center text-dark">
 						<b>Relatório</b>
 					</div></a>
