@@ -10,110 +10,122 @@
   </head>
   <body>		
     			<?php include 'header.php'?>
-
-        <h5 class = "ml-4">*Marque as opções, depois clique em gerar relatório</h5>
-    <div class = "d-flex justify-content-end mr-4">
-      <button type="button" class="btn btn-success mr-2">Gerar Relatório</button>
-      <button type="button" class="btn btn-dark mr-2">Imprimir</button>
-      <button type="button" class="btn btn-danger">Exportar</button>
+    <div class = "d-flex justify-content-end mr-2">
+      <h5 class = "ml-4">*Marque as opções, depois clique em gerar relatório</h5>
     </div>
 
-    <div class = "d-flex justify-content-between m-4">
-      <container>
-        <h6>Módulos</h6>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Cadastro</label>
-        </div>
+    <!-- Módulos -->
+   <div class = "row">
+      <div class = "col-md-12">
+        <h4>Módulo</h4>
+        <form class = "form-inline justify-content-around">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Cadastro</label>
+          </div>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Agenda</label>
-        </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Agenda</label>
+          </div>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Ficha</label>
-        </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Ficha</label>
+          </div>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Estoque</label>
-        </div>
-      </container>
-
-      <container>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Estoque</label>
+          </div>
+        </form>
+      </div>
+    </div> 
+  <!-- Contexto -->
+    <div class = "row">
+      <div class = "col-md-12">
         <h6>Contexto</h6>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Cadastro -> Nome</label>
-        </div>
+        <form class = "form-inline justify-content-around">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Cadastro -> Nome</label>
+          </div>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Cadastro -> Orçamento</label>
-        </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Cadastro -> Orçamento</label>
+          </div>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Agenda -> Dentista</label>
-        </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Agenda -> Dentista</label>
+          </div>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Agenda -> Consulta</label>
-        </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Agenda -> Consulta</label>
+          </div>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Arquivo -> Ficha</label>
-        </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Arquivo -> Ficha</label>
+          </div>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Arquivo -> Procedimento</label>
-        </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Arquivo -> Procedimento</label>
+          </div>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Ficha -> Situação</label>
-        </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Ficha -> Situação</label>
+          </div>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Estoque -> Disponivel</label>
-        </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Estoque -> Disponivel</label>
+          </div>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Estoque -> Validade</label>
-        </div>
-      </container>
-
-      <container>
-        <h6>Ações</h6>
-         
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Realizada</label>
-        </div>
-            
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Agendada</label>
-        </div>
-            
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Confirmada</label>
-        </div>
-            
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1">Cancelada</label>
-        </div>
-      </container>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Estoque -> Validade</label>
+          </div>
+        </form>
+      </div>
     </div>
+
+  <!-- Ações -->
+
+    <div class = "row">
+      <div class = "col-md-12">
+        <h6>Ações</h6>
+         <form class = "form-inline justify-content-around">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Realizada</label>
+          </div>
+              
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Agendada</label>
+          </div>
+              
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Confirmada</label>
+          </div>
+              
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Cancelada</label>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+
     <container><h6>Período</h6>
     <div class="form-group">
         <label for="De">De</label>

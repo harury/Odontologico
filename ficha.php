@@ -30,6 +30,74 @@
 
                 <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal1">Nova Ficha</button>
                 <input type="button" class ="btn btn-dark ml-5" onclick="window.print();" value="Imprimir">
+
+                <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title text-primary" id="modalTitle">Descrição do Paciente</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Nome</label>
+                                            <input type="email" class="form-control" id="inputEmail4" placeholder="Nome">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Nº da Ficha</label>
+                                            <input type="number" class="form-control" id="inputPassword4" placeholder="Número da Ficha">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4">Email</label>
+                                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4">Telefone</label>
+                                            <input type="tel" class="form-control" id="inputPassword4" placeholder="Telefone">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputAddress">Observações</label>
+                                        <input type="text" class="form-control" id="inputAddress" placeholder="Observações">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputAddress2">Endereço</label>
+                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Digite o Endereço do Paciente">
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputCity">Cidade</label>
+                                            <input type="text" class="form-control" id="inputCity">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label for="inputState">Estado</label>
+                                            <input type = "text" id="inputState" class="form-control">
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">UF</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary float-right">Gerar Ficha</button>
+                                </form>
+                               
+                            </div>
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
             <div class = "overflow-auto" style = "max-height: 550px">
                 <table class="table w-100 mt-4">
@@ -92,9 +160,9 @@
                                 <td><?php echo $email?></td>
                                 <td><?php echo $telefone?></td>
                                 <td>
-                                    <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarEstoque.php?id=<?php echo $idEstoque?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarFicha.php?id=<?php echo $idPessoa?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 
-                                    <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick="excluir(<?php echo $array['id_estoque'];?>)" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                    <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick="excluir(<?php echo $array['id_pessoa'];?>)" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>

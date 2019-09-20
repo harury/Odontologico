@@ -36,7 +36,7 @@
 
 	// $inserir = mysqli_query($con, $sql);
 
-	$msg = (mysqli_query($con, $sql)) ? "Gravado com sucesso" : "Erro ao gravar";
+	$msg = (mysqli_query($con, $sql)) ? "Cadastrado com sucesso" : "Erro ao Cadastrar";
 
 	header("location:msg.php?msg=".$msg);
 ?>

@@ -25,11 +25,11 @@
                     <input class="form-control mr-2 ml-1" type="search" name = "nome">
                     <button class="btn btn-primary btn-md mr-3" type="submit">Pesquisar</button>
                 </form>
-                <button type="button" class="btn btn-primary btn-md ml-2" data-toggle="modal" data-target="#modal1">Cadastrar Paciente</button>
+                <button type="button" class="btn btn-primary btn-md ml-2" data-toggle="modal" data-target="#modalCadastro">Cadastrar Paciente</button>
 
                 <input type="button" class ="btn btn-dark ml-2" onclick="window.print();" value="Imprimir">
 
-                 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+                 <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
                     <div class="modal-dialog modal-md" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -167,6 +167,7 @@
                         </div>
                     </div>
                 </div>
+            </span>
                 <?php
                     if(isset($_GET["nome"])){
                         $nome = $_GET["nome"];
@@ -175,7 +176,18 @@
                         
                         $sql = "SELECT * FROM pessoa WHERE nome
                         LIKE '{$nome}%'";
-                        
+
+                        if($nome == "" || $nome == "%" || $nome == "'"){ ?>
+                            <div class = "container">
+                                <div class="alert alert-danger mt-5" role="alert">
+                                    <h4 class="alert-heading">Valor digitado inválido!</h4>
+                                    <p>Digite um valor válido para consulta!</p>
+                                    <hr>
+                                    <p class="mb-0">Sistema Odontológico</p>
+                                </div>
+                            </div>
+                        <?php 
+                        } else {
                         $result = mysqli_query($con, $sql); 
                         
                         $totalRegistros = mysqli_num_rows($result);
@@ -183,7 +195,6 @@
                         if($totalRegistros > 0){
                 ?>
                 <!--Modal  Tela de Cadastro-->
-            </span>
             <div class = "overflow-auto ml-1 mr-1" style = "max-height: 550px">
                 <table class="table border table-striped">
                     <thead id = "theadCadastro" class = "thead-dark">
@@ -230,12 +241,18 @@
                             <?php
                 }
                     } else {?>
-                            <div class="alert alert-danger ml-5" role="alert">
-                                  <?php echo "Nenhum registro encontrado!"; ?>
+                        <div class = "container">  
+                            <div class="alert alert-primary mt-5" role="alert">
+                                <h4 class="alert-heading">Nenhum registro encontrado!</h4>
+                                <p>Por favor, verifique se digitou corretamente o nome do Paciente!</p>
+                                <hr>
+                                <p class="mb-0">Sistema Odontológico</p>
                             </div>
+                        </div>
                         <?php
                     }
-                }      
+                }
+            }   
                 ?>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
