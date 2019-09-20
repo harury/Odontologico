@@ -124,7 +124,7 @@
 					<tbody id = "tbodyProxi">
 				  		<tr>
 				      		<td>8:00</td>
-				      		<td>Leandro Cerqueira pereira da silva</td>
+				      		<td>Leandro Cerqueira</td>
 				      		<td>
 				      			<i class="fa fa-circle text-success" aria-hidden="true"></i>
 				      		</td>
@@ -196,22 +196,35 @@
 							<th  class = "text-center" colspan="2"><i class="fa fa-birthday-cake mr-2" aria-hidden="true"></i>Aniversariantes do Mês</th>
 						</tr>
 					</thead>
+
+					<thead id = "theadProce2">
+				    	<tr>
+				      		<th class = "text-center">Nome</th>
+				     	 	<th class = "text-center">Dia</th>
+				    		<th>Contato</th>
+				  		</tr>
+				  	</thead>
+
 				  	<tbody id = "tbodyAni">
 				    	<tr>
 				      		<td>Leandro Cerqueira</td>
 				      		<td>16-10</td>
+				      		<td>21 98365-6429</td>
 				    	</tr>
 				    	<tr>
 				      		<td>Matheus Ribeiro</td>
 				    		<td>15-08</td>
+				    		<td>21 98365-6429</td>
 				    	</tr>
 				    	<tr>
 				      		<td>Marcus Vinicius</td>
 				    		<td>22-09</td>
+				    		<td>21 98365-6429</td>
 				    	</tr>
 				    	<tr>
 				      		<td>Paulo Victor</td>
 				    		<td>01-02</td>
+				    		<td>21 98365-6429</td>
 				    	</tr>
 				    	<tr>
 				      		<td>XXX.XXX</td>
@@ -220,10 +233,12 @@
 				    	<tr>
 				      		<td>Leandro Cerqueira</td>
 				      		<td>05-10</td>
+				      		<td>21 98365-6429</td>
 				    	</tr>
 				    	<tr>
 				      		<td>Marcus Vinicius</td>
 				    		<td>06-09</td>
+				    		<td>21 98365-6429</td>
 				    	</tr>
 				 	</tbody>
 				</table>
