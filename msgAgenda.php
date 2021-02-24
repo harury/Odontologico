@@ -12,7 +12,7 @@
     <?php include 'header.php'; ?>
     <div class="container">
         <?php $msg = $_GET["msg"];
-             if($msg == "Gravado com sucesso"){?>
+             if($msg == "Gravado com sucesso"){  ?>
                 <div class="alert alert-success" role="alert">
                     <?php echo $msg;?>
                 </div>

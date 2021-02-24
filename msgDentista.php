@@ -21,7 +21,7 @@
                     <?php echo $msg;?>
                 </div>
         <?php };?>
-        <a href="agenda.php">Voltar</a>
+        <a href="adm.php">Voltar</a>
     </div>
 </body>
 </html>

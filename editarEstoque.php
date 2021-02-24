@@ -52,13 +52,13 @@
                         <form class = "form-group mt-2" action="atualizaEstoque.php" method="post">
 
                             <?php
-                                $sql = "SELECT * FROM estoque WHERE id_estoque = '$id'";
+                                $sql = "SELECT * FROM estoque WHERE estoque_id = '$id'";
                                 $buscar = mysqli_query($con, $sql);
 
 
                                 while ($array = mysqli_fetch_array($buscar)){
 
-                                    $id = $array['id_estoque'];
+                                    $id = $array['estoque_id'];
                                     $nroProduto = $array['numeroproduto'];
                                     $nomeProduto = $array['nomeproduto'];
                                     $categoria = $array['categoria'];
@@ -67,23 +67,26 @@
                                     $vencimento = $array['vencimento'];
                                     $complemento = $array['complemento'];
                             ?>
-
-                                <div class="form-group">
-                                    <label for="cpf">N° do Produto:</label>
-                                    <input type="text" class="form-control" id="cpf" name = "nroproduto" value = "<?php echo $nroProduto?>">
-                                     <input type="number" class="form-control" id="id" name = "id" value = "<?php echo $id?>" style = "display:none;">
+                                <div class = "form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="cpf">N° do Produto:</label>
+                                        <input type="text" class="form-control" id="cpf" name = "nroproduto" value = "<?php echo $nroProduto?>">
+                                         <input type="number" class="form-control" id="id" name = "id" value = "<?php echo $id?>" style = "display:none;">
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label for="nome">Nome do Produto:</label>
+                                        <input type="text" class="form-control" id="nome" name = "nomeproduto" value = "<?php echo $nomeProduto?>">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="nome">Nome do Produto:</label>
-                                    <input type="text" class="form-control" id="nome" name = "nomeproduto" value = "<?php echo $nomeProduto?>">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nome">Categoria:</label>
-                                    <input type="text" class="form-control" id="nome" name = "categoria" value = "<?php echo $categoria?>">
-                                </div>
-                            <div class="form-group">
-                                    <label for="nome">Quantidade:</label>
-                                    <input type="text" class="form-control" id="nome" name = "quantidade" value = "<?php echo $quantidade?>">
+                                <div class = "form-row">
+                                    <div class="form-group col-md-9">
+                                        <label for="nome">Categoria:</label>
+                                        <input type="text" class="form-control" id="nome" name = "categoria" value = "<?php echo $categoria?>">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="nome">Quantidade:</label>
+                                        <input type="text" class="form-control" id="nome" name = "quantidade" value = "<?php echo $quantidade?>">
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="nome">Fornecedor:</label>

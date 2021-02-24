@@ -1,9 +1,10 @@
+
 <?php
 
 	include_once 'conexao.php';
 	$id = $_GET['id'];
 
-	$sql =  "DELETE FROM atendimento_tipo where atendimentotipo_id = $id";
+	$sql =  "DELETE FROM atendimento where id = $id";
 
 	$deletar = mysqli_query($con, $sql);
 ?>
@@ -23,7 +24,7 @@
 			<center>
 			    <h3>Deletado com Sucesso!</h3>
 			    <div style="margin-top: 10px">
-			    <a href="adm.php" class="btn btn-sm btn-success" style="color:#fff">Voltar</a>
+			    <a href="agenda.php" class="btn btn-sm btn-success" style="color:#fff">Voltar</a>
 			    </div>    
 			</center>
 		</div>

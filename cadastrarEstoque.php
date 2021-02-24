@@ -3,6 +3,7 @@
 	include_once 'conexao.php';
 
 	//Cadastramento de Produtos no Estoque
+
 	$numeroProduto =  $_POST['nroproduto'];
 	$nomeProduto =  $_POST['nomeproduto'];
 	$categoria =  $_POST['categoria'];
@@ -12,9 +13,7 @@
 	$complemento =  $_POST['complemento'];
 
 
-   echo $sql = "INSERT INTO estoque VALUES(null,{$numeroProduto},'{$nomeProduto}','{$categoria}','{$quantidade}' , '{$fornecedor}', '{$vencimento}', '{$complemento}')"; 
-
-	// $inserir = mysqli_query($con, $sql);
+  	echo $sql = "INSERT INTO estoque VALUES(null,{$numeroProduto},'{$nomeProduto}','{$categoria}','{$quantidade}' , '{$fornecedor}', '{$vencimento}', '{$complemento}')"; 
 
 	$msg = (mysqli_query($con, $sql)) ? "Gravado com sucesso" : "Erro ao gravar";
 

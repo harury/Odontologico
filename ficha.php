@@ -17,159 +17,219 @@
 	<body>
 		
 		<?php include 'header.php'?>
+        <?php
+            $id = $_GET['id'];
+            include_once 'conexao.php';
+            $sql = "SELECT * FROM paciente WHERE id = $id";
+            $busca = mysqli_query($con, $sql);
 
-        <h1 class = "text-center mb-4">Fichas de Pacientes</h1>
-		
-		
-		<div class = "pl-5 pr-5">
-            <div class = "d-inline-flex">
-                <form class="form-inline">
-                        <input class="form-control mr-2 ml-1" type="search" name = "nome">
-                        <button class="btn btn-primary btn-md mr-3" type="submit">Pesquisar</button>
-                </form>
+            while($array = mysqli_fetch_array($busca)){
+                $idFicha = $array['id'];
+                $nome = $array['nome'];
+                $email = $array['email'];
+                $cpf = $array['cpf'];
+                $rg = $array['rg'];
+                $telefone = $array['telefone'];
+                $celular = $array['celular'];
+                $cep = $array['cep'];
+                $endereco = $array['endereco'];
+                $bairro = $array['bairro'];
+                $nascimento = $array['nascimento'];
+                $cidade = $array['cidade'];
+                $uf = $array['uf'];
+                $doencabase = $array['doencabase'];
+                $alergia = $array['alergia'];
+                $medicamentos = $array['medicamentos'];
+                $cirurgia = $array['cirurgia'];
+                $internacoes = $array['internacoes'];
+                $pa = $array['pa'];
+                $queixaprinc = $array['queixaprinc'];
+                $situacaoficha = $array['situacaoficha'];
+                $orcamento = $array['orcamento'];
+                $complemento = $array['complemento'];
+            }
+        ?>
+        <h4 class="text-center mb-2">Dra. ADRIANE B. PIRES MAIA</h4>
+        <h4 class="text-center mb-2">Dra. CRISTIANI B. PIRES SANT'ANNA</h4>
+        <h1 class = "text-center mb-4">Ficha do Paciente - <?php echo $nome?></h1>
+        <div class = "row">
+            <div class = "col"></div>
+            <div class = "col-md-6">
+                <input type="button" class ="btn btn-dark ml-2" onclick="window.print();" value="Imprimir">
 
-                <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#modal1">Nova Ficha</button>
-                <input type="button" class ="btn btn-dark ml-5" onclick="window.print();" value="Imprimir">
-
-                <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h3 class="modal-title text-primary" id="modalTitle">Descrição do Paciente</h3>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">Nome</label>
-                                            <input type="email" class="form-control" id="inputEmail4" placeholder="Nome">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4">Nº da Ficha</label>
-                                            <input type="number" class="form-control" id="inputPassword4" placeholder="Número da Ficha">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputEmail4">Email</label>
-                                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputPassword4">Telefone</label>
-                                            <input type="tel" class="form-control" id="inputPassword4" placeholder="Telefone">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputAddress">Observações</label>
-                                        <input type="text" class="form-control" id="inputAddress" placeholder="Observações">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputAddress2">Endereço</label>
-                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Digite o Endereço do Paciente">
-                                    </div>
-
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputCity">Cidade</label>
-                                            <input type="text" class="form-control" id="inputCity">
-                                        </div>
-
-                                        <div class="form-group col-md-4">
-                                            <label for="inputState">Estado</label>
-                                            <input type = "text" id="inputState" class="form-control">
-                                        </div>
-
-                                        <div class="form-group col-md-2">
-                                            <label for="inputZip">UF</label>
-                                            <input type="text" class="form-control" id="inputZip">
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary float-right">Gerar Ficha</button>
-                                </form>
-                               
-                            </div>
-                            <div class="modal-footer">
-                            </div>
-                        </div>
+                <a href="cadastro.php"><button class = "btn btn-primary ml-2" type="buton" name="voltar">Voltar</button></a>
+                <div class = "form-row d-flex justify-content-end">
+                    <div class = "form-group col-md-2">
+                        <label for = "nFicha"> Nº da Ficha</label>
+                        <input class = "form-control" type="number" name="numeroFicha" value = "<?php echo $idFicha?>" disabled>
                     </div>
                 </div>
 
+                <div class = "mb-2 text-center">
+                    <h5>Dados Pessoais</h5>
+                </div>  
 
+                <div class = "form-row">
+                    <div class="form-group w-100 col-md-2">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" class="form-control" id="cpf" placeholder="" name = "cpf" value = "<?php echo $cpf?>" disabled>
+                    </div>
+                    <div class="form-group w-100 col-md-2">
+                        <label for="rg">RG:</label>
+                        <input type="text" class="form-control" id="rg" placeholder="" name = "rg" value = "<?php echo $rg?>" disabled>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" id="nome" placeholder="" name = "nome" value = "<?php echo $nome?>" disabled>
+                    </div>
+                </div>
+                <div class = "form-row">
+                    <div class="form-group col-md-4">
+                        <label for="nascimento">Data de Nascimento:</label>
+                        <input type="date" class="form-control" id="nascimento" placeholder="" name = "nascimento" value = "<?php echo $nascimento?>" disabled>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="" name = "email" value = "<?php echo $email?>" disabled>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="orcamento">Orçamento:</label>
+                        <input type="text" class="form-control" id="orcamento" placeholder="" name = "orcamento" value = "<?php echo $orcamento?>" disabled>
+                    </div>
+                </div>
+
+                <div class = "form-row">
+                    <div class="form-group col-md-6">
+                        <label for="telefone">Telefone:</label>
+                        <input type="text" class="form-control" id="telefone" placeholder="" name = "telefone" value = "<?php echo $telefone?>" disabled>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="celular">Celular:</label>
+                        <input type="text" class="form-control" id="celular" placeholder="" name = "celular" value = "<?php echo $celular?>" disabled>
+                    </div>
+                </div>     
+
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label for="endereco">Endereço:</label>
+                        <input type="endereco" class="form-control" id="endereco" placeholder="" name = "endereco" value = "<?php echo $endereco?>" disabled>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" class="form-control" id="bairro" placeholder="" name = "bairro" value = "<?php echo $bairro?>" disabled>
+                    </div> 
+                    <div class="form-group col-md-3">
+                        <label for="cep">CEP:</label>
+                        <input type="text" class="form-control" id="cep" placeholder="" name = "cep" value = "<?php echo $cep?>" disabled>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-10">
+                        <label for="Cidade">Cidade:</label>
+                        <input type="text" class="form-control" id="Cidade" name = "cidade" value = "<?php echo $cidade?>" disabled>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="UF">UF:</label>
+                        <input type="text" class="form-control" name = "uf" id="UF" value = "<?php echo $uf?>" disabled>
+                    </div>
+                </div>
+                <div class = "form-row">
+                    <div class="form-group col-md-9">
+                        <label for="Complemento">Complemento:</label>
+                        <input type="text" class="form-control" id="Complemento" placeholder="" name = "complemento" value = "<?php echo $complemento?>" disabled>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Situação (Ficha):</label>
+                        <input class = "form-control" type="text" name="situacaoficha" value = "<?php echo $situacaoficha?>" disabled>
+                    </div>
+                </div>
+                <div class = "text-center">
+                    <h5>Anamnese</h5>
+                </div>  
+                <div class="form-group">
+                    <label for="data">Doenças (Base):</label>
+                    <input type="text" class="form-control" id="doencabase" placeholder="" name = "doencabase" value = "<?php echo $doencabase?>" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="alergia">Alergias:</label>
+                    <input type="text" class="form-control" id="alergia" placeholder="" name = "alergia" value = "<?php echo $alergia?>" disabled>
+                </div> 
+                <div class="form-group">
+                    <label for="medicamentos">Medicamentos:</label>
+                    <input type="text" class="form-control" id="medicamentos" placeholder="" name = "medicamentos" value = "<?php echo $medicamentos?>" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="cirurgia">Cirurgias:</label>
+                    <input type="text" class="form-control" id="cirurgia" placeholder="" name = "cirurgia" value = "<?php echo $cirurgia?>" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="internacoes">Internacões:</label>
+                    <input type="text" class="form-control" id="internacoes" placeholder="" name = "internacoes" value = "<?php echo $internacoes?>" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="pa">P.A:</label>
+                    <input type="text" class="form-control" id="pa" placeholder="" name = "pa" value = "<?php echo $pa?>" disabled>
+                </div>
             </div>
-            <div class = "overflow-auto" style = "max-height: 550px">
-                <table class="table w-100 mt-4">
+
+            <div class = "col-md-4 overflow-auto" style = "top:160px; max-height: 970px">
+                <table class="table w-100 mt-4 table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">Código</th>
-                            <th scope="col">Nome </th>
-                            <th scope="col">Data Nascimento</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Telefone</th>
-                            <th scope = "col"></th>
+                            <th scope="col">Procedimento </th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Observação</th>                               
                         </tr>
                     </thead>
                     <tbody>
                         <?php
 
-                            include_once 'conexao.php';
-
-                            $sql = "SELECT * FROM pessoa";
-
+                        include_once 'conexao.php';
+                        $sql = "SELECT 
+                                pr.id,
+                                pr.valor,
+                                pr.obs,
+                                prt.nome AS procedimento_nome,
+                                p.id As paciente_id,
+                                a.data As atendimento_data
+                                FROM procedimento pr, procedimento_tipo prt, paciente p, atendimento a
+                                WHERE
+                                prt.id = pr.procedimento_tipo_id
+                                AND
+                                p.id = a.paciente_id
+                                AND
+                                a.id = pr.atendimento_id
+                                AND
+                                paciente_id = $id ORDER BY atendimento_data";
                             $busca = mysqli_query($con, $sql);
 
                             while($array = mysqli_fetch_array($busca)){
+                                $id     = $array['procedimento_nome'];
+                                $data1   = $array['atendimento_data'];
+                                $valor  = $array['valor'];
+                                $obs    = $array['obs'];
 
-
-                                $idPessoa = $array['id_pessoa'];
-                                $cpf = $array['cpf'];
-                                $rg = $array['rg'];
-                                $nome = $array['nome'];
-                                $orcamento = $array['orcamento'];
-                                $telefone = $array['telefone'];
-                                $celular = $array['celular'];
-                                $email = $array['email'];
-                                $cep = $array['cep'];
-                                $endereco = $array['endereco'];
-                                $complemento = $array['complemento'];
-                                $bairro = $array['bairro'];
-                                $nascimento = $array['nascimento'];
-                                $cidade = $array['cidade'];
-                                $uf= $array['uf'];
-                                $situacaoficha = $array['situacaoficha'];
-                                $doencabase = $array['doencabase'];
-                                $alergia = $array['alergia'];
-                                $medicamentos = $array['medicamentos'];
-                                $cirurgia = $array['cirurgia'];
-                                $internacoes = $array['internacoes'];
-                                $pa = $array['pa'];
-                                $queixaprinc = $array['queixaprinc']; 
-
-                                //Ajuste da formatação da data DD/MM/AAAA
-                                $dtNasci = explode('-', $nascimento);
-                                $dtNascimento = $dtNasci[2] . "-" . $dtNasci[1]. "-" . $dtNasci[0];
-
-
+                                $data = explode('-', $data1);
+                                $newData = $data[2] . "-" . $data[1]. "-" . $data[0];
                         ?>
-                            <tr>
-                                <td><?php echo $idPessoa?></td>
-                                <td><?php echo $nome?></td>
-                                <td><?php echo $dtNascimento?></td>
-                                <td><?php echo $email?></td>
-                                <td><?php echo $telefone?></td>
-                                <td>
-                                    <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarFicha.php?id=<?php echo $idPessoa?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-
-                                    <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick="excluir(<?php echo $array['id_pessoa'];?>)" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                </td>
+                            <tr>                                    
+                                <td><?php echo $id ?></td>
+                                <td><?php echo $newData?></td>                                  
+                                <td>R$ <?php echo $valor ?></td>
+                                <td><?php echo $obs ?></td>
                             </tr>
-                        <?php } ?>
+                        <?php
+                    };?>                    
                     </tbody>
                 </table>
-            </div> 
-        </div>     
+            </div>
+            <div class = "col"></div>
+        </div>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

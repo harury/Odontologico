@@ -37,22 +37,30 @@
                             <div class="modal-body">
                                 <h5 class="front-left">Descrição do Material</h5>
                                 <form class = "form-group mt-2" action="cadastrarEstoque.php" method="post">
-                                    <div class="form-group">
-                                        <label for="nroProduto">N° do Produto:</label>
-                                        <input type="number" class="form-control" id="nroProduto" placeholder="" name = "nroproduto">
+
+                                    <div class = "form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="nroProduto">N° do Produto:</label>
+                                            <input type="number" class="form-control" id="nroProduto" placeholder="" name = "nroproduto">
+                                        </div>
+
+                                        <div class="form-group col-md-8">
+                                            <label for="nome">Nome do Produto:</label>
+                                            <input type="text" class="form-control" id="nome" placeholder="" name = "nomeproduto">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="nome">Nome do Produto:</label>
-                                        <input type="text" class="form-control" id="nome" placeholder="" name = "nomeproduto">
+
+                                    <div class = "form-row">
+                                        <div class="form-group col-md-9">
+                                            <label for="categoria">Categoria:</label>
+                                            <input type="text" class="form-control" id="categoria" placeholder="" name = "categoria">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="quanti">Quantidade:</label>
+                                            <input type="text" class="form-control" id="quanti" placeholder="" name = "quantidade">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="categoria">Categoria:</label>
-                                        <input type="text" class="form-control" id="categoria" placeholder="" name = "categoria">
-                                    </div>
-                                <div class="form-group">
-                                        <label for="quanti">Quantidade:</label>
-                                        <input type="text" class="form-control" id="quanti" placeholder="" name = "quantidade">
-                                    </div>
+
                                     <div class="form-group">
                                         <label for="fornecedor">Fornecedor:</label>
                                         <input type="text" class="form-control" id="fornecedor" placeholder="" name = "fornecedor">
@@ -63,7 +71,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="obser">Observações:</label>
-                                        <input type="text" class="form-control" id="obser" placeholder="" name = "complemento">
+                                        <textarea class="form-control" id="obser" rows="3" name = "complemento"></textarea>
                                     </div>
                                     <input type="submit" class="btn btn-primary float-right" value = "Cadastrar">
                                 </form>
@@ -74,7 +82,7 @@
                     </div>
                 </div>
                 <div class = "overflow-auto ml-1 mr-1" style = "max-height: 550px">
-                    <table class="table w-100 mt-4">
+                    <table class="table w-100 mt-4 table-hover">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Código</th>
@@ -94,12 +102,9 @@
 
                                 $sql = "SELECT * FROM estoque";
 
-                                $busca = mysqli_query($con, $sql);
+                                $buscar = mysqli_query($con, $sql);
 
-                                while($array = mysqli_fetch_array($busca)){
-
-
-                                    $idEstoque = $array['id_estoque'];
+                                while($array = mysqli_fetch_array($buscar)){
                                     $nroProduto = $array['numeroproduto'];
                                     $nomeProduto = $array['nomeproduto'];
                                     $categoria = $array['categoria'];
@@ -107,7 +112,6 @@
                                     $fornecedor = $array['fornecedor'];
                                     $vencimento = $array['vencimento'];
                                     $complemento = $array['complemento'];
-
 
                                     //Ajuste da formatação da data DD/MM/AAAA
                                     $dtVenci = explode('-', $vencimento);
@@ -123,17 +127,65 @@
                                     <td><?php echo $fornecedor?></td>
                                     <td><?php echo $dtVencimento?></td>
                                     <td><?php echo $complemento?></td>
-                                    <td>
-                                        <a class="btn btn-warning btn-sm"  style="color:#fff" href="editarEstoque.php?id=<?php echo $idEstoque?>" role="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <td class = "d-flex justify-content-around">
+                                        <a style = "font-size: 15px" class="btn btn-warning btn-sm text-white"  style="color:#fff" href="editarEstoque.php?id=<?php echo $array['estoque_id']?>" role="button">
+                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                            Editar
+                                        </a>
 
-                                        <a class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick="excluir(<?php echo $array['id_estoque']; ?>)" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                        <a style = "font-size: 15px" class="btn btn-danger btn-sm"  style="color:#fff" href="#" onclick="excluir(<?php echo $array['estoque_id']; ?>)" role="button">
+                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            Excluir
+                                        </a>
                                     </td>
                                 </tr>
                             <?php } ?>
                         </tbody>
                     </table>
                 </div>
-            </div>     
+            </div>
+
+            <?php 
+                if(mysqli_num_rows($buscar) > 0){
+                    if($quantidade < 10){
+            ?>    
+            <div class = "overflow-auto ml-5 w-25 mt-5" style = "max-height: 400px">              
+                <h3 class = "text-center">Favor, repor os seguintes produtos:</h3>
+                <table class="table w-100 mt-4 table-hover ml-2">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Nome</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+
+                    include_once 'conexao.php';
+
+                    $sql = "SELECT * FROM estoque WHERE quantidade <= 9";
+
+                    $busca = mysqli_query($con, $sql);
+
+                    while($array = mysqli_fetch_array($busca)){
+                    $nroProduto = $array['numeroproduto'];
+                    $nomeProduto = $array['nomeproduto'];
+
+                    //Ajuste da formatação da data DD/MM/AAAA
+                    $dtVenci = explode('-', $vencimento);
+                    $dtVencimento = $dtVenci[2] . "-" . $dtVenci[1]. "-" . $dtVenci[0];
+
+
+                    ?>
+                        <tr>
+                            <td><?php echo $nomeProduto?></td>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                </table>
+                
+            </div>
+                <?php }; ?>
+            <?php } ?>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -1,9 +1,10 @@
 <?php
 
 	include_once 'conexao.php';
+
 	$id = $_GET['id'];
 
-	$sql =  "DELETE FROM atendimento_tipo where atendimentotipo_id = $id";
+	$sql =  "DELETE FROM dentista where id = $id";
 
 	$deletar = mysqli_query($con, $sql);
 ?>

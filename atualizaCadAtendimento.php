@@ -1,21 +1,12 @@
 <?php
-    include_once 'conexao.php';
-    $id = $_POST['id'];
-    $nroProduto = $_POST['nroproduto'];
-    $nomeProduto = $_POST['nomeproduto'];
-    $categoria = $_POST['categoria'];
-    $quantidade = $_POST['quantidade'];
-    $fornecedor = $_POST['fornecedor'];
-    $vencimento = $_POST['vencimento'];
-    $complemento = $_POST['complemento'];
+    include 'conexao.php';
+    $id = $_POST['atendimentoid'];
+    $nome = $_POST['atendimentonome'];
+    
 
-
-    $sql = "UPDATE estoque SET `numeroproduto`= '$nroProduto', `nomeproduto`='$nomeProduto', `categoria`= '$categoria', `quantidade`='$quantidade', `fornecedor`='$fornecedor', `vencimento`='$vencimento', `complemento`='$complemento' WHERE `estoque_id` = $id";
-
-    $atualizar = mysqli_query($con, $sql);
+    $sql = "UPDATE atendimento_tipo SET  `atendimentonome` = '$nome' WHERE `atendimentotipo_id` = $id";
+    $atualizar = mysqli_query($con, $sql)
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +22,7 @@
         <center>
             <h3>Editado com Sucesso!</h3>
             <div style="margin-top: 10px">
-            <a href="estoque.php" class="btn btn-sm btn-success" style="color:#fff">Voltar</a>
+            <a href="adm.php" class="btn btn-sm btn-success" style="color:#fff">Voltar</a>
             </div>    
         </center>
         </div>

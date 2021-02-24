@@ -4,7 +4,7 @@
 	include_once 'conexao.php';
 	$id = $_GET['id'];
 
-	$sql =  "DELETE FROM estoque where id_estoque = $id";
+	$sql =  "DELETE FROM estoque where estoque_id = $id";
 
 	$deletar = mysqli_query($con, $sql);
 ?>

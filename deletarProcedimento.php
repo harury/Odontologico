@@ -1,9 +1,10 @@
 <?php
 
 	include_once 'conexao.php';
+
 	$id = $_GET['id'];
 
-	$sql =  "DELETE FROM procedimento where id_procedimento = $id";
+	$sql =  "DELETE FROM procedimento_tipo where id = $id";
 
 	$deletar = mysqli_query($con, $sql);
 ?>
